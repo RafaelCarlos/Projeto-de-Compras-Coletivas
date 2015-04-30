@@ -5,11 +5,39 @@
  *
  * @author Rafael Carlos
  */
+
+/**
+ * @Entity
+ * @Table(name="venda")
+ */
 class Venda {
 
+    /**
+     *
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
+     * @Column(type="integer", name="id_venda")
+     */
     private $id_venda;
+    
+    /**
+     *
+     * @Timestamp
+     * @Column(name="data_venda",  nullable=false)
+     */
     private $data_venda;
+    
+    /**
+     *
+     * @Column(type="float", name="valor_venda",  nullable=false)
+     */
     private $valor_venda;
+    
+    /**
+     *
+     * @ManyToOne(targetEntity="Cliente", cascade={"all"}, fetch="LAZY")
+     * @JoinColumn(name="cliente_id_cliente", referencedColumnName="id_cliente")
+     */
     private $cliente_id_cliente;
 
     function __construct() {

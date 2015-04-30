@@ -16,6 +16,7 @@ class Usuario {
      *
      * @Id
      * @GeneratedValue(strategy="AUTO")
+     * @Column(type="integer", name="id_usuario")
      */
     private $idUsuario;
 

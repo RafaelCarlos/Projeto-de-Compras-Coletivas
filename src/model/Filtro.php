@@ -5,10 +5,33 @@
  *
  * @author Rafael Carlos
  */
+
+/**
+ * @Entity
+ * @Table(name="filtro")
+ */
 class Filtro {
 
+    /**
+     *
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
+     * @Column(type="integer", name="id_filtro")
+     */
     private $id_filtro;
+    
+    /**
+     *
+     * @ManyToOne(targetEntity="Produto", cascade={"all"}, fetch="LAZY")
+     * @JoinColumn(name="produto)id_produto", referencedColumnName="id_produto")
+     */
     private $produto_id_produto;
+    
+    /**
+     *
+     *@ManyToOne(targetEntity="Cliente", cascade={"all"}, fetch="LAZY")
+     * @JoinColumn(name="cliente_id_cliente", referencedColumnName="id_cliente")
+     */
     private $cliente_id_cliente;
 
     function __construct() {

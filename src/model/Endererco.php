@@ -58,12 +58,14 @@ class Endererco {
     /**
      *
      * @OneToOne(targetEntity="Cliente")
+     * @JoinColumn(name="cliente_id_cliente", referencedColumnName="id_cliente")
      */
     private $cliente_id_cliente;
     
     /**
      *
      * @OneToOne(targetEntity="FornecedorParceiro")
+     * @JoinColumn(name="fornecedor_parceiro_id_fornecedor", referencedColumnName="id_fornecedor")
      */
     private $fornecedor_parceiro_id_fornecedor;
 

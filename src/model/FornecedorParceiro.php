@@ -41,6 +41,7 @@ class FornecedorParceiro {
     /**
      *
      * @OneToOne(targetEntity="Usuario.class.php") 
+     * @JoinColumn(name="usuario_id_usuario", referencedColumnName="id_usuario")
      */
     private $usuario_id_usuario;
 

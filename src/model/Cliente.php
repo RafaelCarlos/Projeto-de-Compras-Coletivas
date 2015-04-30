@@ -14,7 +14,7 @@ class Cliente {
 
     /**
      *
-     *@Id
+     * @Id
      * @GeneratedValue(strategy="AUTO")
      * @Column(type="integer", name="id_cliente")
      */
@@ -31,25 +31,25 @@ class Cliente {
      * @Column(type="string",name="nome_cliente", length=100, nullable=false)
      */
     private $nome_cliente;
-    
+
     /**
      *
      * @Column(type="string",name="rg_cliente", length=15, nullable=false)
      */
     private $rg_cliente;
-    
+
     /**
      *
      * @Column(type="string",name="telefone_cliente", length=15, nullable=false)
      */
     private $telefone_cliente;
-    
+
     /**
      *
      * @Column(type="integer", name="quantidade_cliente")
      */
     private $quantidade_clientes;
-    
+
     /**
      *
      * @Column(type="string",name="sexo_cliente", length=20, nullable=false)
@@ -66,9 +66,8 @@ class Cliente {
     /**
      *
      * @OneToOne(targetEntity="Usuario")
-     * @JoinColumn(name="id_usuario", referencedColumnName="id_usuario")
+     * @JoinColumn(name="usuario_id_usuario", referencedColumnName="id_usuario")
      */
-   
     private $usuario_id_usuario;
 
     function __construct() {
@@ -142,13 +141,12 @@ class Cliente {
     function setData_nascimento($data_nascimento) {
         $this->data_nascimento = $data_nascimento;
     }
-    
-    function setUsuario(Usuario $idUsuario)
-    {
+
+    function setUsuario(Usuario $idUsuario) {
         $this->usuario_id_usuario = $idUsuario->getId_suario();
-        
     }
-                function setUsuario_id_usuario($usuario_id_usuario) {
+
+    function setUsuario_id_usuario($usuario_id_usuario) {
         $this->usuario_id_usuario = $usuario_id_usuario;
     }
 
